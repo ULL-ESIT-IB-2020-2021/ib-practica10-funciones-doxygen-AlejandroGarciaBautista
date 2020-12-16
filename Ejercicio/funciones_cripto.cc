@@ -18,3 +18,14 @@ void Usage(int argc, char *argv[]) {
     exit(EXIT_SUCCESS);
   }
 }
+
+void Encrypted_Cesar(std::ifstream input_file, std::ofstream output_file, int password){
+  if (!input_file){
+        std::cerr << "No se puede abrir el archivo" << std::endl;
+      }
+      while (input_file){
+        std::string lines;
+        std::getline(input_file, lines);
+        std::cout << lines << '\n';
+      }
+}

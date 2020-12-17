@@ -12,3 +12,6 @@ This text is Markdown text. To learn about Markdown, Study these references:
 * [StackEdit. An On-line MarkDown Editor](https://stackedit.io/)
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
+# Posibles problemas con el programa.
+
+Se recomienda modificar el archivo "document_to_encrypt.txt" antes de ejecutar el comando "make" ya que en si se realizan a continuación de ejecutar el comando puede que no se escriban los datos nuevos. 

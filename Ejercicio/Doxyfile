@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "Proyecto para prueba de Doxygen"
+PROJECT_NAME           = "Práctica 10. Ficheros. Documentación de programas. Doxygen"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -44,7 +44,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Informática Básica. Este es un proyecto para probar la documentación generada por Doxygen para un 48 proyecto de programación en C++"
+PROJECT_BRIEF          = "Practica de Informatica Basica en la cual se pide un programa que encripte un fichero y que tambien sea capaz de desencriptarlo mediante los metodos de Cesar y XOR, asimismo se pide que se genere su documentación con Doxygen"
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is included in
 # the documentation. The maximum height of the logo should not exceed 55 pixels

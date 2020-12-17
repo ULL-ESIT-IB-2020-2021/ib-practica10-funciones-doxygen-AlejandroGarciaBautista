@@ -33,7 +33,7 @@ void Usage(int argc, char *argv[]) {
     exit(EXIT_SUCCESS);
   }
 }
-///La funcion Encrypted_Cesar encriptara mediante el metodo cesar el texto de documento pasado por linea de comandos.
+///La funcion Encrypted_Cesar encriptara mediante el metodo cesar el texto de documento pasado por linea de comandos y luego lo grabara en otro archivo.
 void Encrypted_Cesar(std::string to_encrypt, std::ofstream& out,int password){
   std::transform(to_encrypt.begin(),to_encrypt.end(),to_encrypt.begin(), ::toupper); /// https://stackoverflow.com/questions/735204/convert-a-string-in-c-to-upper-case 
   for (char character : to_encrypt){

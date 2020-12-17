@@ -1,0 +1,239 @@
+\hypertarget{funciones__cripto_8cc}{}\doxysubsection{funciones\+\_\+cripto.\+cc File Reference}
+\label{funciones__cripto_8cc}\index{funciones\_cripto.cc@{funciones\_cripto.cc}}
+
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}funciones\+\_\+cripto.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for funciones\+\_\+cripto.\+cc\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_aeac332c082069f54e8769d311dd2049d}{Usage}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em La funcion Usage va a comprobar el uso de los argumentos pasados por linea de comandos, y va a generar mensajes si son necesarios con con argumentos especiales como puede ser --help. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_ae81e19a8ec9a6f8817cc1bcb7e0d31a5}{Encrypted\+\_\+\+Cesar}} (std\+::string to\+\_\+encrypt, std\+::ofstream \&out, int password)
+\begin{DoxyCompactList}\small\item\em La funcion Encrypted\+\_\+\+Cesar encriptara mediante el metodo cesar el texto de documento pasado por linea de comandos y luego lo grabara en otro archivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_a177d542a3bdbfff438dd6b5df88f3108}{Desencrypt\+\_\+\+Cesar}} (std\+::string to\+\_\+desencrypt, std\+::ofstream \&out, int pass)
+\begin{DoxyCompactList}\small\item\em La funcion Desencrypt\+\_\+\+Cesar hace todo lo contrario a Encrypted\+\_\+\+Cesar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_abd35efd0ed3de13b3c524a9ebdd6c35d}{Encrypted\+\_\+\+X\+OR}} (std\+::string lines\+\_\+to\+\_\+encrypt, std\+::ofstream \&out, std\+::string secret)
+\begin{DoxyCompactList}\small\item\em La función Encrypted\+\_\+\+X\+OR deberia funcionar para recibir una string obtenida desde un fichero para luego encriptarla usando el metodo X\+OR y luego grabar el resultado en un archivo elegido por el usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_a9723cc485577c27d5ce53319415a06af}{Desencrypt\+\_\+\+X\+OR}} (std\+::string lines\+\_\+to\+\_\+desencrypt, std\+::ofstream \&out, std\+::string secret)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{funciones__cripto_8cc_a08728caac9a53278aea6a3218ae1dfeb}{k\+Help\+Text}} = \char`\"{}Modo de uso\+: ./cripto fichero\+\_\+entrada fichero\+\_\+salida método password operación \textbackslash{}n fichero\+\_\+entrada\+: Fichero a codificar \textbackslash{}n fichero\+\_\+salida\+: Fichero codificado \textbackslash{}n método\+: Indica el método de encriptado \textbackslash{}n 1\+: Cifrado xor \textbackslash{}n 2\+: Cifrado de César \textbackslash{}n password\+: Palabra secreta en el caso del método 1, Valor de K en el caso del método 2 \textbackslash{}n operación\+: Operación a realizar en el fichero \textbackslash{}n +\+: encriptar el fichero \textbackslash{}n -\/\+: desencriptar el fichero\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. 
+
+\begin{DoxyAuthor}{Author}
+Alejandro García Bautista 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+17/12/20
+\end{DoxyDate}
+Este archivo .cc contiene todas las funciones necesarias para poder utilizar el programa ./cripto. \begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]La función Encrypted\+\_\+\+X\+OR no funciona como se esperaba que funcionase. \end{DoxyRefDesc}
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{funciones__cripto_8cc_a177d542a3bdbfff438dd6b5df88f3108}\label{funciones__cripto_8cc_a177d542a3bdbfff438dd6b5df88f3108}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!Desencrypt\_Cesar@{Desencrypt\_Cesar}}
+\index{Desencrypt\_Cesar@{Desencrypt\_Cesar}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{Desencrypt\_Cesar()}{Desencrypt\_Cesar()}}
+{\footnotesize\ttfamily void Desencrypt\+\_\+\+Cesar (\begin{DoxyParamCaption}\item[{std\+::string}]{to\+\_\+desencrypt,  }\item[{std\+::ofstream \&}]{out,  }\item[{int}]{pass }\end{DoxyParamCaption})}
+
+
+
+La funcion Desencrypt\+\_\+\+Cesar hace todo lo contrario a Encrypted\+\_\+\+Cesar. 
+
+
+
+Definition at line 55 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                                                                          \{}
+\DoxyCodeLine{56   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} character : to\_desencrypt)\{}
+\DoxyCodeLine{57     \textcolor{keywordflow}{if}(isalpha(character))\{}
+\DoxyCodeLine{58       character = character -\/ pass;}
+\DoxyCodeLine{59       \textcolor{keywordflow}{if} (character < \textcolor{charliteral}{'A'})\{}
+\DoxyCodeLine{60         character = character + 26;}
+\DoxyCodeLine{61       \}}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63     out << character;}
+\DoxyCodeLine{64   \}}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{funciones__cripto_8cc_a9723cc485577c27d5ce53319415a06af}\label{funciones__cripto_8cc_a9723cc485577c27d5ce53319415a06af}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!Desencrypt\_XOR@{Desencrypt\_XOR}}
+\index{Desencrypt\_XOR@{Desencrypt\_XOR}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{Desencrypt\_XOR()}{Desencrypt\_XOR()}}
+{\footnotesize\ttfamily void Desencrypt\+\_\+\+X\+OR (\begin{DoxyParamCaption}\item[{std\+::string}]{lines\+\_\+to\+\_\+desencrypt,  }\item[{std\+::ofstream \&}]{out,  }\item[{std\+::string}]{secret }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85                                                                                       \{}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{funciones__cripto_8cc_ae81e19a8ec9a6f8817cc1bcb7e0d31a5}\label{funciones__cripto_8cc_ae81e19a8ec9a6f8817cc1bcb7e0d31a5}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!Encrypted\_Cesar@{Encrypted\_Cesar}}
+\index{Encrypted\_Cesar@{Encrypted\_Cesar}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{Encrypted\_Cesar()}{Encrypted\_Cesar()}}
+{\footnotesize\ttfamily void Encrypted\+\_\+\+Cesar (\begin{DoxyParamCaption}\item[{std\+::string}]{to\+\_\+encrypt,  }\item[{std\+::ofstream \&}]{out,  }\item[{int}]{password }\end{DoxyParamCaption})}
+
+
+
+La funcion Encrypted\+\_\+\+Cesar encriptara mediante el metodo cesar el texto de documento pasado por linea de comandos y luego lo grabara en otro archivo. 
+
+\href{https://stackoverflow.com/questions/735204/convert-a-string-in-c-to-upper-case}{\texttt{ https\+://stackoverflow.\+com/questions/735204/convert-\/a-\/string-\/in-\/c-\/to-\/upper-\/case}}
+
+Definition at line 37 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                                                                          \{}
+\DoxyCodeLine{38   std::transform(to\_encrypt.begin(),to\_encrypt.end(),to\_encrypt.begin(), ::toupper); }
+\DoxyCodeLine{39   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} character : to\_encrypt)\{}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(isalpha(character))\{}
+\DoxyCodeLine{41       character = character + password;}
+\DoxyCodeLine{42       \textcolor{keywordflow}{if} (character > \textcolor{charliteral}{'Z'})\{}
+\DoxyCodeLine{43         character = character -\/ 26;}
+\DoxyCodeLine{44       \}}
+\DoxyCodeLine{45       \textcolor{keywordflow}{if} (character < \textcolor{charliteral}{'A'})\{}
+\DoxyCodeLine{46         character = character + 26;}
+\DoxyCodeLine{47       \}}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49   std::string encrypted\_sentence = \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{50   encrypted\_sentence = encrypted\_sentence + character;}
+\DoxyCodeLine{51   out << encrypted\_sentence;}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{funciones__cripto_8cc_abd35efd0ed3de13b3c524a9ebdd6c35d}\label{funciones__cripto_8cc_abd35efd0ed3de13b3c524a9ebdd6c35d}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!Encrypted\_XOR@{Encrypted\_XOR}}
+\index{Encrypted\_XOR@{Encrypted\_XOR}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{Encrypted\_XOR()}{Encrypted\_XOR()}}
+{\footnotesize\ttfamily void Encrypted\+\_\+\+X\+OR (\begin{DoxyParamCaption}\item[{std\+::string}]{lines\+\_\+to\+\_\+encrypt,  }\item[{std\+::ofstream \&}]{out,  }\item[{std\+::string}]{secret }\end{DoxyParamCaption})}
+
+
+
+La función Encrypted\+\_\+\+X\+OR deberia funcionar para recibir una string obtenida desde un fichero para luego encriptarla usando el metodo X\+OR y luego grabar el resultado en un archivo elegido por el usuario. 
+
+Asimismo la función Desencrypt\+\_\+\+X\+OR deberia hacer la funcionalidad contraria. 
+
+Definition at line 72 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                                                                                    \{}
+\DoxyCodeLine{73   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} character\_password : secret)\{}
+\DoxyCodeLine{74     \textcolor{keywordflow}{if}(isalpha(character\_password))\{}
+\DoxyCodeLine{75       character\_password = character\_password \string^ 128;    }
+\DoxyCodeLine{76     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} character\_string : lines\_to\_encrypt)\{}
+\DoxyCodeLine{77     character\_string = character\_string \string^ character\_password;}
+\DoxyCodeLine{78     out << character\_string;}
+\DoxyCodeLine{79       \}}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81   \}}
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{funciones__cripto_8cc_aeac332c082069f54e8769d311dd2049d}\label{funciones__cripto_8cc_aeac332c082069f54e8769d311dd2049d}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!Usage@{Usage}}
+\index{Usage@{Usage}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{Usage()}{Usage()}}
+{\footnotesize\ttfamily void Usage (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+La funcion Usage va a comprobar el uso de los argumentos pasados por linea de comandos, y va a generar mensajes si son necesarios con con argumentos especiales como puede ser --help. 
+
+
+
+Definition at line 25 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                                    \{}
+\DoxyCodeLine{26   \textcolor{keywordflow}{if} (argc > 6) \{}
+\DoxyCodeLine{27     std::cout << \textcolor{stringliteral}{"Pruebe "} << argv[0] << \textcolor{stringliteral}{" -\/-\/help para más información"} << std::endl;}
+\DoxyCodeLine{28     exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{29   \}}
+\DoxyCodeLine{30   std::string parameter =argv[1];}
+\DoxyCodeLine{31   \textcolor{keywordflow}{if} (parameter == \textcolor{stringliteral}{"-\/-\/help"}) \{}
+\DoxyCodeLine{32     std::cout << \mbox{\hyperlink{funciones__cripto_8cc_a08728caac9a53278aea6a3218ae1dfeb}{kHelpText}} << std::endl;}
+\DoxyCodeLine{33     exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{34   \}}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+
+
+References k\+Help\+Text.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\doxysubsubsection{Variable Documentation}
+\mbox{\Hypertarget{funciones__cripto_8cc_a08728caac9a53278aea6a3218ae1dfeb}\label{funciones__cripto_8cc_a08728caac9a53278aea6a3218ae1dfeb}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!kHelpText@{kHelpText}}
+\index{kHelpText@{kHelpText}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{kHelpText}{kHelpText}}
+{\footnotesize\ttfamily const std\+::string k\+Help\+Text = \char`\"{}Modo de uso\+: ./cripto fichero\+\_\+entrada fichero\+\_\+salida método password operación \textbackslash{}n fichero\+\_\+entrada\+: Fichero a codificar \textbackslash{}n fichero\+\_\+salida\+: Fichero codificado \textbackslash{}n método\+: Indica el método de encriptado \textbackslash{}n 1\+: Cifrado xor \textbackslash{}n 2\+: Cifrado de César \textbackslash{}n password\+: Palabra secreta en el caso del método 1, Valor de K en el caso del método 2 \textbackslash{}n operación\+: Operación a realizar en el fichero \textbackslash{}n +\+: encriptar el fichero \textbackslash{}n -\/\+: desencriptar el fichero\char`\"{}}
+
+
+
+Definition at line 21 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by Usage().
+

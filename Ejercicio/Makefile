@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c+11 -g -Wall
+CXXFLAGS = -std=c++11 -g -Wall
 LDFLAGS = 
 
 all: cripto

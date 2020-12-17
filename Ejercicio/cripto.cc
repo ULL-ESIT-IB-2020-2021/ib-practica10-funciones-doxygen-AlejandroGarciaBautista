@@ -9,7 +9,7 @@
   * @date 17/12/20
   * @brief El programa a partir de la linea de comandos obtiene una serie
   *        de instrucciones asi como dos ficheros en donde uno debera contener
-  *        un texto para encritar o desencriptar ya sea con el Metodo XOR o el 
+  *        un texto para encriptar o desencriptar ya sea con el Metodo XOR o el 
   *        Metodo Cesar. Para obtener información de como utilar el programa ejecute
   *        ./cripto --help para ver todas las opciones. El programa esta casi terminado
   *        solo a falta de terminar el metodo XOR ya que me da error de la manera que lo estoy haciendo.

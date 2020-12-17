@@ -85,3 +85,17 @@ void Encrypted_XOR (std::string lines_to_encrypt, std::ofstream& out, std::strin
 void Desencrypt_XOR(std::string lines_to_desencrypt, std::ofstream& out, std::string secret){
 
 }
+
+
+
+void CountVowelI(std::ifstream& vowels){
+  std::string my_str;
+  std::getline(vowels, my_str);
+  int counter = 0;
+  for (char vowel_i : my_str){
+    if (vowel_i == 'i' || vowel_i == 'I'){
+      counter = ++counter;
+    }
+  }
+  std::cout << "En el archivo de entrada hay este numero de I " << counter << std::endl;
+}

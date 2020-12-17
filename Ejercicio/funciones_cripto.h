@@ -18,3 +18,4 @@ void Encrypted_Cesar(std::string input_file, std::ofstream& out,int code);
 void Desencrypt_Cesar(std::string to_desencrypt, std::ofstream& out, int pass);
 void Encrypted_XOR (std::string lines_to_encrypt, std::ofstream& out, std::string secret);
 void Desencrypt_XOR(std::string lines_to_desencrypt, std::ofstream& out, std::string secret);
+void CountVowelI(std::ifstream& vowels);

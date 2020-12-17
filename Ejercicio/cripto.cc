@@ -25,7 +25,8 @@ int main (int argc, char* argv[]){
   Usage(argc, argv); 
   std::string how_to_operate = argv[5];
   int method_number = std::stoi(argv[3]);
-  
+  std::ifstream count_vowel (argv[1]);
+  CountVowelI(count_vowel);
   if (method_number == 1){
     std::string secret_word = argv[4];
     std::ifstream file_1 (argv[1]);

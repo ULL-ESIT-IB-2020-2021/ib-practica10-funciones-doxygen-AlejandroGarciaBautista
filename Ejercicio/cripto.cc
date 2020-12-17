@@ -15,12 +15,25 @@ int main (int argc, char* argv[]){
     }  
   }else if (method_number == 2){
     int code = std::stoi(argv[4]);
+    std::string lines;
+    std::ifstream file_to_encrypt (argv[1]);
+    std::ofstream file_encrypted (argv[2]);
     if (how_to_operate == "+"){
-      std::ifstream file (argv[1]);
-      std::ofstream out_file (argv[2]);
-      Encrypted_Cesar(file, out_file, code);
+      if (!file_to_encrypt){
+        std::cerr << "No se puede abrir el archivo" << std::endl;
+      }
+      while (file_to_encrypt){
+        std::getline(file_to_encrypt, lines);
+      }
+      if (!file_encrypted){
+        std::cerr << "No hemos encontrado el archivo en el que querias escribir el codigo codificado" << std::endl;
+      }
+      Encrypted_Cesar(lines, file_encrypted,code);
     }else if (how_to_operate == "-"){
-
+      std::string copy_lines;
+      if(!file_encrypted){
+        std::cerr << "No se puede abrir el archivo" << std::endl;
+      }
     } 
   }
   return 0;

@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "funciones_cripto.h"
+#include <algorithm>
 
 
 
@@ -19,13 +20,24 @@ void Usage(int argc, char *argv[]) {
   }
 }
 
-void Encrypted_Cesar(std::ifstream input_file, std::ofstream output_file, int password){
-  if (!input_file){
-        std::cerr << "No se puede abrir el archivo" << std::endl;
+void Encrypted_Cesar(std::string to_encrypt, std::ofstream& out,int password){
+  std::transform(to_encrypt.begin(),to_encrypt.end(),to_encrypt.begin(), ::toupper); // https://stackoverflow.com/questions/735204/convert-a-string-in-c-to-upper-case 
+  for (auto character : to_encrypt){
+    if(isalpha(character)){
+      character = character + password;
+      if (character > 'Z'){
+        character = character - 26;
       }
-      while (input_file){
-        std::string lines;
-        std::getline(input_file, lines);
-        std::cout << lines << '\n';
+      if (character < 'A'){
+        character = character + 26;
       }
+    }
+  std::string encrypted_sentence = " ";
+  encrypted_sentence += character;
+  out << encrypted_sentence << std::endl;
+  }
+}
+
+void Desencrypt_Cesar(std::string to_desencrypt, int pass){
+
 }

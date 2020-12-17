@@ -22,7 +22,7 @@ void Usage(int argc, char *argv[]) {
 
 void Encrypted_Cesar(std::string to_encrypt, std::ofstream& out,int password){
   std::transform(to_encrypt.begin(),to_encrypt.end(),to_encrypt.begin(), ::toupper); // https://stackoverflow.com/questions/735204/convert-a-string-in-c-to-upper-case 
-  for (auto character : to_encrypt){
+  for (char character : to_encrypt){
     if(isalpha(character)){
       character = character + password;
       if (character > 'Z'){
@@ -33,11 +33,19 @@ void Encrypted_Cesar(std::string to_encrypt, std::ofstream& out,int password){
       }
     }
   std::string encrypted_sentence = " ";
-  encrypted_sentence += character;
-  out << encrypted_sentence << std::endl;
+  encrypted_sentence = encrypted_sentence + character;
+  out << encrypted_sentence;
   }
 }
 
-void Desencrypt_Cesar(std::string to_desencrypt, int pass){
-
+void Desencrypt_Cesar(std::string to_desencrypt, std::ofstream& out,int pass){
+  for (auto character : to_desencrypt){
+    if(isalpha(character)){
+      character = character - pass;
+      if (character < 'A'){
+        character = character + 26;
+      }
+    }
+    out << character;
+  }
 }

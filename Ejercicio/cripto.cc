@@ -25,15 +25,16 @@ int main (int argc, char* argv[]){
       while (file_to_encrypt){
         std::getline(file_to_encrypt, lines);
       }
-      if (!file_encrypted){
-        std::cerr << "No hemos encontrado el archivo en el que querias escribir el codigo codificado" << std::endl;
-      }
       Encrypted_Cesar(lines, file_encrypted,code);
     }else if (how_to_operate == "-"){
       std::string copy_lines;
-      if(!file_encrypted){
+      if(!file_to_encrypt){
         std::cerr << "No se puede abrir el archivo" << std::endl;
       }
+      while (file_to_encrypt){
+        std::getline (file_to_encrypt, copy_lines);
+      }
+      Desencrypt_Cesar(copy_lines, file_encrypted, code);
     } 
   }
   return 0;
